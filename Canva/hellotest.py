@@ -17,7 +17,7 @@ all_texts_so_far = []
 
 for position in positions:
     # Create a temporary text clip to get its size
-    temp_txt_clip = TextClip("Hello", fontsize=24, color='white')
+    temp_txt_clip = TextClip("TSLA: +4.79%", fontsize=48, color='white', font="DejaVu-Sans-Bold")
     txt_width, txt_height = temp_txt_clip.size
     centered_position = (position[0] - txt_width/2, position[1] - txt_height/2)
 
