@@ -35,6 +35,17 @@ class WikipediaWebScrape:
     def close(self):
         self.driver.quit()
 
+           
+    def fetch_tickers(self):
+        rows = self.fetch_table_rows()
+        tickers = []
+        for row in rows[1:]:  # skip header row
+            columns = row.find_elements(By.TAG_NAME, "td")
+            ticker_symbol = columns[0].text
+            tickers.append(ticker_symbol)
+        return tickers
+
+
 if __name__ == "__main__":
     scraper = WikipediaWebScrape()
 
